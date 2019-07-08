@@ -77,6 +77,20 @@ following configurations are usually required.
 
 ### UI Element
 
+````bash
+npm i element-ui -S
+
+````
+Import Element in main.js
+````js
+// ElementUI
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+
+````
+
 ### UI uikit
 
 ## Add a page (view)
