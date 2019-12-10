@@ -1,7 +1,7 @@
 ---
 title: BinUtils
 date: 2019-06-21
-tags: binutils
+tags: [binutils, bin, utils]
 ---
 
 Source|[sourceware.org](https://sourceware.org/binutils/docs/binutils/index.html#SEC_Contents)

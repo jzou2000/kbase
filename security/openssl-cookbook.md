@@ -1,7 +1,7 @@
 ---
 title: OpenSSL Cookbook
 date: 2019-05-17
-tags: openssl, cookbook
+tags: [openssl, cookbook]
 ---
 
 1 OpenSSL

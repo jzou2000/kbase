@@ -2,7 +2,7 @@
 title: unknown
 date: 2019-05-28
 draft: true
-tags:
+tags: [tips, unknown]
 ---
 
 =@= Configure Simba ODBC drivers

@@ -1,7 +1,8 @@
 ---
 title: "OpenSSL Essentials: Working with SSL Certificates, Private Keys and CSRs"
 date: 2019-05-17
-tags: openssl, certificate, key, csr
+nav: OpenSSL Essentials
+tags: [openssl, certificate, key, csr]
 source: "https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs"
 ---
 [source](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)

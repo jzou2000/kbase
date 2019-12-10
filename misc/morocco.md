@@ -1,7 +1,7 @@
 ---
 title: Trip To Morocco
 date: 2019-05-27
-tags: trip morocco
+tags: [trip, morocco]
 ---
 
 

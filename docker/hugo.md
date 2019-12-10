@@ -1,31 +1,35 @@
 ---
 title: Hugo SSG on Docker
 date: 2019-04-18
-tags: docker hugo static-site theme
+tags: [docker, hugo, static-site, theme]
 ---
 
 ## Hugo Docker
 
 
-```
+```bash
 docker pull klakegg/hugo:ext-apline  # 17mb
 
 
 ```
+
 ### Build
-```
+
+```bash
 docker run --rm -it -v $(pwd):/src -v $(pwd)/output:/target klakegg/hugo:ext-alpine
 ```
 
 ### Run Server
-```
+
+```bash
 docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:ext-alpine
 ```
 
 ### Compose
 
 ### Shell
-```
+
+```bash
 docker run --rm -it -v $(pwd):/src klakegg/hugo:ext-alpine shell
 ```
 
@@ -69,28 +73,40 @@ Ports:
 |Nuo|clean customizable lightweight|0.50|X more research|
 |Code Editor|atom code|0.14|ui:atom|
 
-
+```bash
 git clone https://github.com/aubm/hugo-code-editor-theme.git themes/code-editor
+```
 
 ### techdoc
+
+```bash
 https://github.com/thingsym/hugo-theme-techdoc.git
 git clone https://github.com/thingsym/hugo-theme-techdoc.git themes/techdoc
 failed on .18
+```
 show documents in file tree on left sidebar.
 
 ### docuapi
+
+```
 https://github.com/bep/docuapi.git
 git clone https://github.com/bep/docuapi.git themes/docuapi
+```
 
 need more research on this theme
 left sidebar is confusing
 
 ### book
+
+```
 git clone https://github.com/alex-shpak/hugo-book.git themes/book
 run but not work
 maybe config yaml?
+```
 
 ### not work
+
+```bash
 git clone https://github.com/taikii/whiteplain.git themes/whiteplain
 git clone https://github.com/hauke96/hugo-theme-hamburg.git themes/hamburg
 git clone https://github.com/tblyler/light-hugo.git themes/light-hugo
@@ -100,11 +116,11 @@ git clone --depth 1 https://github.com/MunifTanjim/minimo themes/minimo
 git clone https://github.com/AngeloStavrow/indigo.git themes/indigo
 git clone https://github.com/hbpasti/heather-hugo themes/heather
 git clone https://github.com/laozhu/hugo-nuo themes/nuo
-
+```
 
 ## Setup A Site
 
-````bash
+```bash
 
 $ create hugo4; cd hugo4
 # host
@@ -127,4 +143,4 @@ git submodule add https://github.com/thingsym/hugo-theme-techdoc.git themes/tech
 # edit config.toml
 
 git 
-````
+```

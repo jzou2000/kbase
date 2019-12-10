@@ -1,29 +1,31 @@
 ---
 title: Docker Cheatsheet - Basic
 date: 2019-03-19
-tags: docker cheatsheet
+nav: cheatsheet - basic
+tags: [docker, cheatsheet]
 ---
 
 # Get Information
 
-```sh
+```bash
 docker --version
 docker info
 docker images ls
 docker container ls -all
-
 ```
 
 
 # Container
 
-```sh
+```bash
 docker run [OPTIONS] IMAGE [COMMAND] [ARGS...]
 
 -d --detach
 
 ```
+
 Most common options
+
 |option|default|description|
 |------|-------|-----------|
 |-d, --detach||run in background|
@@ -43,6 +45,9 @@ Most common options
 # Image
 
 ## Common Images
+
+|tag|download|install|
+|----|---:|---:|
 |debian:9-slim|22m|55.3m|
 |centos:6|70m|194m|
 
@@ -52,7 +57,7 @@ Most common options
 
 ## build older gcc from source
 
-```sh
+```bash
 sudo apt build-dep gcc
 wget https://ftp.gnu.org/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2
 tar xaf gcc-4.8.5.tar.bz2

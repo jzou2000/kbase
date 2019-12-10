@@ -1,7 +1,8 @@
 ---
 title: Java - Load A Class and/or Overload A Class On the Fly
 date: 2019-06-18
-tags: java load overload on-the-fly
+nav: Load A Class Dynamically
+tags: [java, load, overload, on-the-fly]
 ---
 
 Loading a class on-the-fly (or at runtime) is required in the following scenarios:
@@ -13,7 +14,7 @@ more classes that will replace or extend the application existing classes, depen
 on the order of searching path.
 
 ## File Structure
-````
+```ini
 expkg/              # root of the project
 src/                # source of the app
   ex/overload/      # the package
@@ -34,12 +35,12 @@ build/              # build output for src/
 build-alt/          # build output for src-alt
 exo.jar             # output of app
 ex2.jar             # output of src-alt
-````
+```
 
 ## The Main Application
 
 Factory.java
-````java
+```java
 // Factory.java
 package ex.overload;
 
@@ -93,10 +94,10 @@ public class Factory {
 	}
 
 }
-````
+```
 
 Motor.java
-````java
+```java
 // Motor.java
 package ex.overload;
 
@@ -114,10 +115,10 @@ public class Motor {
 	
 }
 
-````
+```
 
 Honda.java
-````java
+```java
 // Honda.java
 package ex.overload;
 import ex.overload.Motor;
@@ -129,10 +130,10 @@ public class Honda extends Motor {
 
 }
 
-````
+```
 
 Kawasaki.jva
-````java
+```java
 // Kawasaki.java
 package ex.overload;
 
@@ -144,13 +145,13 @@ public class Kawasaki extends Motor {
 
 }
 
-````
+```
 
 
 ## The Plug-in
 
 The second version of Kawasaki.java
-````java
+```java
 // Kawasaki.java
 package ex.overload;
 
@@ -162,10 +163,10 @@ public class Kawasaki extends Motor {
 
 }
 
-````
+```
 
 A new motocycle maker.
-````java
+```java
 // Yamaha.java
 package ex.overload;
 
@@ -177,13 +178,13 @@ public class Yamaha extends Motor {
 
 }
 
-````
+```
 
 ## Build Ant
 
 The ant build script (```build.xml```) is at the root of the project
 
-````xml
+```xml
 <?xml version="1.0"?>
 <project name="expkg" default="info">
 
@@ -247,11 +248,11 @@ The ant build script (```build.xml```) is at the root of the project
   </target>
 
 </project>
-````
+```
 
 
 Run to build
-````bash
+```bash
 $ ant alt
 Buildfile: /mnt/huge/jzou/codex/java/expkg/build.xml
 
@@ -272,12 +273,13 @@ alt:
 BUILD SUCCESSFUL
 Total time: 0 seconds
 
-````
+```
 
 ## Run the Application
 
 Run exo.jar alone
-````sh
+
+```bash
 $ java -jar exo.jar cbr ninja r3
 Start
     hello
@@ -286,10 +288,11 @@ Start
     Kawasaki.ninja is green
     (Yamaha).r3
 End
-````
+```
 
 Run exo.jar and ex2.jar, ex2.jar is loaded after exo.jar.
-````sh
+
+```bash
 $ java -cp exo.jar:ex2.jar ex.overload.Factory cbr ninja r3
 Start
     hello
@@ -299,13 +302,14 @@ Start
     Yamaha.r3 is an instrument?
 End
 
-````
+```
 Notice that ``-cp`` and ``-jar`` are not supported in the same time (``-jar`` ignores ``-cp``),
 if we want to load two (or more) jars, the simplest way is to use ``-cp`` only. In this case,
 entrance class is required.
 
 Load ex2.jar before exo.jar. This time Kawasaki is the version in the plugin.
-````sh
+
+```bash
 $ java -cp ex2.jar:exo.jar ex.overload.Factory cbr ninja r3
 Start
     hello
@@ -315,4 +319,4 @@ Start
     Yamaha.r3 is an instrument?
 End
 
-````
+```

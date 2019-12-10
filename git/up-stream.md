@@ -1,7 +1,8 @@
 ---
 title: Setup Git Upstream
+nav: setup upstream
 date: 2019-03-01
-tags: git upstream
+tags: [git, upstream]
 ---
 
 
@@ -18,22 +19,23 @@ You can create a repo as a bare repo, or convert a non-bare repo to bare.
 
 ## Create A Bare Repo
 Initialize a bare repo
-````bash
+
+```bash
 git init --bare
-````
+```
 
 Clone a repo as a bare repo, which does not have a default remote _origin_ repo.
-````bash
+```bash
 git clone --bare
-````
+```
 
 ## Convert A Non-bare Repo To Bare Repo
-````bash
+```bash
 # delete any working copies if applicable
 # e.g. rm -rf *
 # and leave .git/ only
 git config --bool core.bare true
-````
+```
 
 # Start by Setting-up Upstream Repo
 The common practice for a formal project is to initialize a upstream repo firstly.
@@ -43,19 +45,19 @@ Everyone (even you might be the only one) then clones it and pulls/pushes to it.
 In the real world, you probably often start a project locally by initializing a repo locally. After a bunch of commits, you decide to make it public. Now you need to setup an upstream repo from your existing working repo.
 
 ## Clone As Bare
-````bash
+```bash
 git clone my-working-repo-url my-upstream-repo-name --bare
-````
+```
 
 ## Push To An Upstream
 In case you own your upstream repo facility
-````bash
+```bash
 git init --bare
-````
+```
 Or you create a new repo from github.
 
 Then set the new repo as the upstream repo of the working repo, and push to it.
-````bash
+```bash
 git remote add my-upstream-name my-upstream-url
 git push --set-upstream my-upstream-name master
-````
+```

@@ -1,11 +1,11 @@
 ---
 title: Install Docker
 date: 2019-03-01
-tags: docker install
+tags: [docker, install]
 ---
 
 ## install
-````sh
+```bash
 sudo apt-get update
 sudo apt-get install \
     apt-transport-https \
@@ -21,6 +21,7 @@ sudo add-apt-repository \
     stable"
 sudo apt-get update
 sudo apt-get install docker-ce
+
 # apt-cache madison docker-ce
 sudo groupadd docker
 sudo usermod -aG docker jzou
@@ -31,4 +32,4 @@ sudo docker run hello-world
 docker --version
     Docker version 17.12.0-ce, build c97c6d6
 
-````
+```

@@ -1,31 +1,35 @@
 ---
 title: Git Submodule
+nav: submodule
 date: 2019-04-17
-tags: git submodule
+tags: [git, submodule]
 ---
 
 ## Prepare Root Repo and Clone It
 
-See details at [Push Excercise](push-ex.html)
+See details at [Push Excercise]({{<ref "push-ex.md">}})
 
 
 ## Add submodule
 Delete and clone repo dave from adam
-```
+
+```bash
 $ cd $REPO
 $ rm -rf dave
 $ git clone adam dave --bare
 ```
 
 Remove dave from susan
-```
+
+```bash
 $ cd $EX/susan
 $ git remote remove origin
 ```
 
 
 Add susan as submodule of dave
-```
+
+```bash
 $ cd $EX
 $ git clone $REPO/dave
 $ cd dave
@@ -73,14 +77,15 @@ Date:   Mon Apr 15 16:51:19 2019 -0700
 ## Get a Working Copy with Submodule
 
 Another working folder of dave, which clone dave and all its submodules
-```
+
+```bash
 $ cd $EX
 $ git clone --recursive $REPO/dave dave2
 ```
 
 Alternatively, you can update submodules manually
 
-```
+```bash
 $ cd $EX
 $ git clone $REPO/dave dave3
 $ cd dave3/susan # the submodule folder is empty
@@ -96,7 +101,7 @@ the repo of submodule remote can be changed in
 
 ### Submoduel Repo Is Updated Alone
 
-```
+```bash
 $ cd $EX/susan
 $ cat >> memo  # append some lines
 $ git add memo
@@ -122,7 +127,8 @@ Date:   Mon Apr 15 16:51:19 2019 -0700
 ```
 
 To reflect the change of the submodule repo, the super-project must pull the change
-```
+
+```bash
 # switch to working folder of the submodule, pull the latest change from the repo
 $ cd $EX/dave/susan
 $ git pull
@@ -200,14 +206,15 @@ To /home/jzou/codex/git/repo/dave
 
 ### Get Updates In A Working Copy
 
-```
+```bash
 cd $EX/dave4
 git pull
 git submodule update
 ```
 
 Here are the actual commands execution and outputs
-```
+
+```bash
 jzou@debian9:~/codex/git/dave4$ git pull
 remote: Counting objects: 2, done.
 remote: Compressing objects: 100% (2/2), done.

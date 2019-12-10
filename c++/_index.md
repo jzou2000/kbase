@@ -1,5 +1,6 @@
 ---
 title: C++
+toplevel: true
 weight: 100
 menu:
     main:

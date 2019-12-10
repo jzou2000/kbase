@@ -1,5 +1,7 @@
 ---
 title: Deprecated Linux Commands And Their Replacements
+nav: deprecated and replacements
+tags: [deprecated, replacement, debian, linux]
 ---
 
 Debian 9

@@ -1,11 +1,13 @@
 ---
 title: Push Exercise
+nav: push exercise
 date: 2019-04-15
-tags: git push
+tags: [git, push]
 ---
 
 ## Plan
-```
+
+```bash
 export EX=~/codex/git
 export REPO=$EX/repo
 mkdir -p $REPO
@@ -15,7 +17,8 @@ mkdir -p $REPO
 
 
 ## Setup Root Repo
-```
+
+```bash
 $ cd $REPO
 $ mkdir adam
 $ cd adam
@@ -36,7 +39,8 @@ $ git push
 
 
 ## Create A clone of Root Repo
-```
+
+```bash
 $ cd $REPO
 $ git clone adam dave --bare
 $ cd dave
@@ -68,7 +72,8 @@ Date:   Mon Apr 15 16:51:19 2019 -0700
 
 Now push my work folder to the repo dave, -f (force) is used,
 otherwise git denies to push because susan is not cloned from dave.
-```
+
+```bash
 $ git remote add origin $REPO/dave
 $ git remote -v
 origin	/home/jzou/codex/git/repo/dave (fetch)
@@ -86,7 +91,8 @@ Branch master set up to track remote branch master from origin.
 ```
 
 Now go back to repo dave
-```
+
+```bash
 $ cd $REPO/dave
 $ git log
 commit 23221f81f98add2a30527ead0ddbd04b67554ee0

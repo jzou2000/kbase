@@ -1,16 +1,17 @@
 ---
 title: C++ Name Demangling
 date: 2019-06-21
-tags: demangling
+tags: [c++, demangling]
 ---
 
 c++filt
 
 ## Usage
-````sh
+```bash
 c++filt symbol
-````
+```
 
-````sh
+
+```bash
 nm libmy.a | c++filt | less
-````
+```

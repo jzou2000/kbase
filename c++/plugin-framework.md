@@ -1,7 +1,8 @@
 ---
 title: Building Your Own Plugin Framework
 date: 2019-05-28
-tags: plugin framework
+nav: A Plugin Framework
+tags: [c++, plugin, framework, dll]
 ---
 
 source [Dr.Dobb's Building Your Own Plugin Framework](http://www.drdobbs.com/cpp/building-your-own-plugin-framework-part/204202899)

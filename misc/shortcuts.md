@@ -1,7 +1,7 @@
 ---
 title: Keyboard Shortcuts
 date: 2019-05-27
-tags: keyboard shortcut eclipse vsc
+tags: [keyboard, shortcut, eclipse, vsc]
 ---
 
 # Eclipse

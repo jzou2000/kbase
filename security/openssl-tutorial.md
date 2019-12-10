@@ -1,7 +1,8 @@
 ---
 title: A 6 Part Introductory OpenSSL Tutorial
 date: 2019-05-17
-tags: openssl tutorial
+nav: OpenSSL Tutorial
+tags: [openssl, tutorial]
 source: "https://www.keycdn.com/blog/openssl-tutorial"
 ---
 

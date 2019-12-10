@@ -1,7 +1,7 @@
 ---
 title: Hugo Template and Theme
 date: 2019-06-10
-tags: hugo theme template
+tags: [hugo, theme, template]
 ---
 
 ## Search Order
@@ -12,3 +12,6 @@ tags: hugo theme template
 4. /layouts/_default/kind-baseof.html
 5. /layout/_default/baseof.html
 
+## References
+
+* [Highlight: Chroma Style Gallery](https://xyproto.github.io/splash/docs/longer/all.html)
