@@ -6,8 +6,10 @@ vue: true
 ---
 
 
-<div id='sample-app'>
-    {{message}}
+<div id='sample-app'
+ style='background: lightgray; padding: 4px 16px; margin: 16px;'>
+    <p>This is a sample Vue app.</p>
+    {{ message }}
     <ul>
         <li v-for="i in fruit">
             {{ i }}
@@ -25,8 +27,10 @@ vue: true
     })
 </script>
 
-```html
-<div id='sample-app'>
+```html {linenos=table,hl_lines=[1,12]}
+<div id='sample-app'
+ style='background: lightgray; padding: 4px 16px; margin: 16px;'>
+    <p>This is a sample Vue app.</p>
     {{message}}
     <ul>
         <li v-for="i in fruit">
@@ -45,3 +49,13 @@ vue: true
     })
 </script>
 ```
+
+Note:
+
+* Since Hugo 0.60.0, [Goldmark](https://github.com/yuin/goldmark/) is used as the default markdown parser, which disables raw HTML tags by default. To enable raw HTML tags, like this page, set hugo config like below:
+  ```yaml
+  markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  ```
