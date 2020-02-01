@@ -1,5 +1,6 @@
 ---
 title: VisualStudio Code and Javascript
+weight: -10
 date: 2019-10-08
 description: Setting and debugging for Javascript with Visual Studio Code.
 nav: VSC - settings and more

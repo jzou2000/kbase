@@ -27,7 +27,7 @@ vue: true
     })
 </script>
 
-```html {linenos=table,hl_lines=[1,12]}
+```html {linenos=table,hl_lines=[1,14]}
 <div id='sample-app'
  style='background: lightgray; padding: 4px 16px; margin: 16px;'>
     <p>This is a sample Vue app.</p>
