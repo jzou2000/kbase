@@ -3,6 +3,7 @@ title: My docker that runs hugo
 date: 2019-11-21
 nav: my hugo docker
 tags: [docker, setup, tips]
+weight: 30
 ---
 
 ## Setup

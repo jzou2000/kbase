@@ -3,6 +3,7 @@ title: Run glibc Applications on Alpine
 date: 2019-03-28
 tags: [docker, glibc, alpine]
 nav: glibc + alpine
+weight: 100
 ---
 
 # The Problem

@@ -1,7 +1,9 @@
 ---
 title: Common NPM Modules
 date: 2019-10-11
+nav: common modules index
 tags: [npm, module, js]
+weight: 20
 ---
 
 ## Modules and Size
@@ -14,11 +16,11 @@ Method
 |Name|Size|Description|
 |----|-----|------|
 |express+axios|3.7M|mini web framework + promise based http client|
-|better-sqlite3|23M|The fastest and simplest library for SQLite3 in Node.js.|
-|fast-xml-parser|372k|Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries|
-|js-yaml|1.1M|YAML 1.2 parser and serializer|
-|markdown-it|1.5M|Markdown-it - modern pluggable markdown parser.|
-|nedb|4.6M|File-based embedded data store for node.js|
+|[better-sqlite3](https://www.npmjs.com/package/better-sqlite3)|23M|The fastest and simplest library for SQLite3 in Node.js.|
+|[fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)|372k|Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries|
+|[js-yaml](https://www.npmjs.com/package/js-yaml)|1.1M|YAML 1.2 parser and serializer|
+|[markdown-it](https://www.npmjs.com/package/markdown-it)|1.5M|Markdown-it - modern pluggable markdown parser.|
+|[nedb](https://www.npmjs.com/package/nedb)|4.6M|File-based embedded data store for node.js|
 |socket.io|3.9M|Node.js realtime framework server (and client)|
 |sqlite3|15M|Asynchronous, non-blocking SQLite3 bindings|
 |standard|45M|JavaScript Standard Style|
@@ -26,8 +28,9 @@ Method
 |node-expat|4.8M|libexpat node.js bind|
 |sax|100K|An evented streaming XML parser in JavaScript|
 |superagent|2.3M|Small progressive client-side HTTP request library, and Node.js module with the same API, sporting many high-level HTTP client features. alternate of axios|
-|highlight.js|680K|Syntax highlighting with language autodetection.|
+|[highlight.js](https://www.npmjs.com/package/highlight.js)|2.4M|Syntax highlighting with language autodetection.|
 |iconv-lite|516K|Convert character encodings in pure javascript.|
+|[js-levenshtein](#js-levenshtein)|20K|Calculate levenshtein distance, based on Wagner-Fischer dynamic programming algorithm, optimized for speed and memory.|
 
 
 
@@ -48,6 +51,11 @@ Major candidates
 Ref:
 * [Node argument parsers in 2018](https://pantas.net/node_argument_parsers/)
 * [npm trends](https://www.npmtrends.com/argparse-vs-commander-vs-minimist-vs-yargs)
+
+
+## Sample Usages
+
+
 
 
 

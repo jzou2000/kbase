@@ -2,6 +2,7 @@
 title: VisualStudio Properties
 date: 2019-05-28
 tags: [visual-studio, vs, properties, prop]
+weight: 21
 ---
 
 # VisualStudio Properties

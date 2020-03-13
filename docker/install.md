@@ -2,6 +2,7 @@
 title: Install Docker
 date: 2019-03-01
 tags: [docker, install]
+weight: 1
 ---
 
 ## install

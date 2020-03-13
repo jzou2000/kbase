@@ -2,6 +2,7 @@
 title: Hugo SSG on Docker
 date: 2019-04-18
 tags: [docker, hugo, static-site, theme]
+weight: 30
 ---
 
 ## Hugo Docker

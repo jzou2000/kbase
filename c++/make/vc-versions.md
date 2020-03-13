@@ -3,6 +3,7 @@ title: Visual Studio and Visual C++ Versions
 date: 2019-05-28
 nav: "VS/VC version"
 tags: [vs, vc, version]
+weight: 20
 ---
 
 # Visual Studio Version and Visual C++ Version

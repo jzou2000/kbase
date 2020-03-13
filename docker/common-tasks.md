@@ -2,6 +2,7 @@
 title: Common Tasks on Docker Maintenance
 nav: common tasks
 date: 2019-12-11
+weight: 3
 ---
 
 ## Update Image

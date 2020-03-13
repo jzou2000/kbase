@@ -3,6 +3,7 @@ title: Bind-mount a Local Folder on Windows
 date: 2019-03-28
 tags: [docker, windows, bind]
 nav: bind-mount on Windows
+weight: 50
 ---
 
 The Docker container supports mounting a host folder to a container mount point
