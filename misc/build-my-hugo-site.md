@@ -50,6 +50,28 @@ On my local workstation, I have
    git push -u origin master
    ```
 
+## Set chroma for highlight style
+
+Hugo has a bunch of stocked chroma for it highlighter, they can be exported
+to CSS using following command.
+
+```sh
+hugo gen chromastyles --style=monokai > syntax.css
+```
+
+Choose the proper style name (if not monokai) and save the css file to the theme static folder. In theme ``van``, the style is based on ``vs`` and saved in ``static/css``.
+
+To let the chroma css take effect, add following lines in config.yaml
+
+```yaml
+
+pygmentsUseClasses: true
+pygmentsCodefences: true
+
+```
+
+
+
 ## Regular Publish Steps
 
 1. commit and push markdown pages

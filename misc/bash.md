@@ -86,3 +86,37 @@ d[bad]=night
 |${#var[@]}     |${#d[@]}        |2               |length of array/dictionary $var|
 
 
+## Here Doc
+
+Simple case
+
+```bash
+
+cat << EOF
+some text
+more text
+EOF
+
+```
+
+Use in pipes
+
+```bash
+
+cat << EOF |
+some text
+more text
+EOF
+grep some
+
+```
+
+or alternatively
+
+```bash
+cat << EOF | grep some
+some text
+more text
+EOF
+
+```
