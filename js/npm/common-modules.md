@@ -31,6 +31,13 @@ Method
 |[highlight.js](https://www.npmjs.com/package/highlight.js)|2.4M|Syntax highlighting with language autodetection.|
 |iconv-lite|516K|Convert character encodings in pure javascript.|
 |[js-levenshtein](#js-levenshtein)|20K|Calculate levenshtein distance, based on Wagner-Fischer dynamic programming algorithm, optimized for speed and memory.|
+|[simple-git](https://www.npmjs.com/package/simple-git)|524K|Simple wrapper of git|
+
+Other packages
+
+|Name|Size|Description|
+|----|-----|------|
+|[node-gyp]()|1.77M (unpack)|use to build native modules, e.g. sqlite3|
 
 
 
