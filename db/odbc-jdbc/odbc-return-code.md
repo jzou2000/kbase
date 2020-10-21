@@ -1,6 +1,7 @@
 ---
 title: ODBC Common Constants
 nav: common constants
+tags: odbc, constants
 ---
 
 ## Return Code
