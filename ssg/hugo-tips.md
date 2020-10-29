@@ -36,9 +36,9 @@ Since Hugo 0.60.0, [Goldmark](https://github.com/yuin/goldmark/) is used as the 
 
 ```yaml
 markup:
-goldmark:
-  renderer:
-    unsafe: true
+  goldmark:
+    renderer:
+      unsafe: true
 ```
 
 * Some people propose to re-vote the default behavior to *true*, because people who embed raw HTML tags in markdown know what they are doing.
