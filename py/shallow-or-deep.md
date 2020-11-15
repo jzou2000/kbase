@@ -2,6 +2,7 @@
 title: Shallow Or Deep
 nav: shallow or deep
 date: 2019-12-11
+weight: 10
 ---
 
 ## Shadow
