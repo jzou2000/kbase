@@ -32,6 +32,8 @@ Method
 |iconv-lite|516K|Convert character encodings in pure javascript.|
 |[js-levenshtein](#js-levenshtein)|20K|Calculate levenshtein distance, based on Wagner-Fischer dynamic programming algorithm, optimized for speed and memory.|
 |[simple-git](https://www.npmjs.com/package/simple-git)|524K|Simple wrapper of git|
+|[jsdiff](https://www.npmjs.com/package/diff)|369K|pure java diff tools|
+|[diff2html](https://www.npmjs.com/package/diff2html)|1.65M|generates pretty HTML diffs from git diff or unified diff output.|
 
 Other packages
 

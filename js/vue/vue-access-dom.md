@@ -2,7 +2,8 @@
 title: Accessing DOM from a Vue App
 date: 2019-05-08
 tags: [vue, DOM, js, javascript]
-nav: Accessing DOM
+nav: accessing DOM
+weight: 10
 ---
 
 Although it is more preferable to use virtual-DOM for exchanging data between UI components and model in a Vue-based application, accessing DOM elements directly is still required in some special cases:

@@ -1,8 +1,9 @@
 ---
 title: Drag-and-Drop with Vue
-nav: dnd in vue
+nav: drag-n-drop
 keywords: [vue, dnd, hugo]
 vue: true
+weight: 20
 ---
 
 <style>

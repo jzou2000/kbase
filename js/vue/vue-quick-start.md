@@ -1,8 +1,9 @@
 ---
 title: Vue App Quick Start
 date: 2019-05-28
-nav: Quick Start
+nav: quick start
 tags: [vue, quick-start]
+weight: 1
 ---
 
 

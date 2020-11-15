@@ -3,6 +3,7 @@ title: Embeded Vue in Hugo Site
 nav: vue in hugo
 keywords: [vue, hugo]
 vue: true
+weight: 19
 ---
 
 

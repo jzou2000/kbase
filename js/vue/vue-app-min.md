@@ -1,9 +1,10 @@
 ---
-title: Minimal Setup A Vue App
+title: Minimal Setup A Vue App Project
 date: 2019-05-23
-nav: Minimal Setup
+nav: minimal project setup
 categories: [vue, js]
 tags: [minimal, setup, vue]
+weight: 2
 ---
 
 ## Pre-request

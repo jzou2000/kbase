@@ -1,7 +1,8 @@
 ---
-title: Embeded Vue (with Components) in Hugo Site
+title: Using Components
 nav: vue component
 keywords: [vue, hugo]
+weight: 10
 vue: true
 ---
 
