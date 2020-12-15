@@ -20,8 +20,21 @@ Other useful options are
 
 |Options|Description|
 |--------|-----------|
-|-Od     |list only files that are different|
-|-sa     |list only file name, not content|
+|-Od     |list only files that are changed|
+|-f      |diff every file, opened and unopened|
+||**display option**|
+|-ds     |summary, i.e. list file name only|
+|-db     |ignore whites changes|
+|-dw     |ignore whites |
+|-dl     |ignore line-ending|
+||**select filter** (can't mix them)|
+|-sa     |opened: changed or deleted |
+|-sb     |opened: changed for integrate, resolved|
+|-sr     |opened: unchanged |
+|-sd     |unopened: deleted|
+|-se     |unopened: changed |
+|-sl     |unopened: every unopened files, with status of: same, diff, missing|
+
 
 ```sh
 

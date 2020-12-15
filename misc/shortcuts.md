@@ -4,9 +4,9 @@ date: 2019-05-27
 tags: [keyboard, shortcut, eclipse, vsc]
 ---
 
-# Eclipse
+## Eclipse
 
-## Edit
+### Edit
 |strokes|purpose|
 |-------|-------|
 |Debug||
@@ -23,9 +23,9 @@ tags: [keyboard, shortcut, eclipse, vsc]
 |^/|toggle comment|
 
 
-# VSC
+## VSC
 
-## Edit
+### Edit
 |shortcut|ation|
 |---|---|
 |^]/[|indent/outdent|
@@ -35,7 +35,7 @@ tags: [keyboard, shortcut, eclipse, vsc]
 
 
 
-## Navigate
+### Navigate
 |shortcut|ation|
 |---|---|
 |^T|show all symbols|
@@ -48,12 +48,12 @@ tags: [keyboard, shortcut, eclipse, vsc]
 |A-F12|peek definition|
 |S-F12|show references|
 |F2|rename symbol|
-|^TAB|open next|
+|^TAB|switch between tabs|
 
 
 
 
-## Layout
+### Layout
 |shortcut|ation|
 |---|---|
 |^\ |split editor|
@@ -64,7 +64,7 @@ tags: [keyboard, shortcut, eclipse, vsc]
 |S^P|show command palette|
 |S^N|new window|
 
-## Debug
+### Debug
 |shortcut|ation|
 |---|---|
 |F9|toggle breakpoint|
@@ -72,6 +72,20 @@ tags: [keyboard, shortcut, eclipse, vsc]
 |S-F5|stop|
 |F11/S-F11|step in/out|
 |F10|step over|
+
+## Windows 10 Terminal
+
+|shortcut   |ation                |
+|-----------|---------------------|
+|S^[n]      |open new tab of type n=1,2,3,...|
+|^TAB       |switch between tabs  |
+|SA--       |split horizontally   |
+|sA-+       |split vertically     |
+|A-arrow    |change focus in panes|
+|SA-arrow   |change pane size     |
+|SA-D       |add new pane         |
+
+
 
 
 
