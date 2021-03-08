@@ -15,12 +15,12 @@ osb=
 
 |brace expansion|example         |result          |description|
 |---------------|----------------|----------------|--------------|
-|${var:-word}   |${os:-aix}      |linux           |$var if it is unset or null, else word|
+|${var:-word}   |${os:-aix}      |linux           |$var or word|
 |               |${osb:-aix}     |aix             |(osb is null)|
 |               |${osc}:-aix}    |aix             |(osc is unset)|
-|${var:=word}   |${os:=aix}      |linux           |$var if it is unset or null, else var=word and return|
+|${var:=word}   |${os:=aix}      |linux           |$var or word (with assignment)|
 |               |${osb:=aix}     |aix             |in addition osb=aix|
-|${var:+word}   |${os:+aix}      |aix             |word if $var is unset or null, else null (var is not changed)|
+|${var:+word}   |${os:+aix}      |aix             |word if $var else null|
 |               |${osb:+aix}     |                |(osb is null)|
 |${var:?word}   |${osb:?aix}     |                |if $var is unset or null, print word in stdout and exit if non-interactive, else return $var|
 |               |${os:?aix}      |linux           |       |

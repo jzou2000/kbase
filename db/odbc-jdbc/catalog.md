@@ -11,7 +11,7 @@ categories:
 ---
 
 
-# Catalog Functions - odbc vs jdbc
+## Catalog Functions - odbc vs jdbc
 
 |Catalog|ODBC|JDBC|Comment|
 |---|---|---|---|
@@ -21,17 +21,17 @@ categories:
 |PrimaryKeys|SQLPrimaryKeys|getTables|
 |ForeignKeys|SQLForeignKeys|getTables|
 
-## Catalogs
+### Catalogs
 ResultSet getCatalogs()
 * TABLE_CAT
 
-## Schemas
+### Schemas
 ResultSet getSchemas()
 
 * TABLE_SCHEM
 * TABLE_CATALOG
 
-## TableTypes
+### TableTypes
 ResultSet getTableTypes()
 
 * TABLE_TYPE
@@ -46,7 +46,7 @@ type values
 * ALIAS
 * SYNONYM
 
-## Table
+### Tables
 ||SQLTables|getTables|
 |---|---|---|
 |Input|catalog|catlog|
@@ -64,7 +64,7 @@ type values
 |||SELF_REFERENCING_COL_NAME|
 |||REF_GENERATION|
 
-## Columns
+### Columns
 ||SQLColumns|getColumns|
 |---|---|---|
 |Input|catalog|catlog|
@@ -98,7 +98,7 @@ type values
 
 
 
-## PrimaryKeys
+### PrimaryKeys
 
 ||SQLPrimaryKeys|getPrimaryKeys|
 |---|---|---|
@@ -113,7 +113,7 @@ type values
 ||PK_NAME|*|
 
 
-## ForeignKeys
+### ForeignKeys
 
 ||SQLForeignKeys|getCrossReference|getImportedKeys|getExportedKeys|
 |---|---|---|---|---|
@@ -137,3 +137,30 @@ type values
 ||FK_NAME|*|*|
 ||PK_NAME|*|*|
 ||DEFERRABILITY|*|*|
+
+## ODBC Catalog Function Arguments
+
+All ODBC catalog functions accept name filters on their resultset.
+When the statement attribute ``ATTR_METADATA_ID`` equals to ``SQL_TRUE``, those name filters are IDs,
+otherwise they can be in three catalogs
+
+* OA (ordinary argument) - literal string values, apply to SQLXXXKeys, SQLSpecialColumns, SQLStatistics, and all (but SQLTables) catalog name
+  * If a value is not supported or not used (e.g. catalog name or schema name), it should be empty string
+  * If an ordinary argument is set to a null pointer
+    * the argument is required (see notes), SQL_ERROR (HY009) is returned.
+    * the argument is not a required, the argument's behavior is driver-dependent.
+* PV (pattern value) - SQL patterns, apply to most name filters except catalog names
+  * ``_`` stands for RE ``.``
+  * ``%`` stands for RE ``.*``
+* VL (value list) - list of value separated by comma, **ONLY** apply to SQLTables.TableType, ignoring ``ATTR_METADATA_ID``
+
+Note
+* see details at ODBC spec [Arguments in Catalog Functions](https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/arguments-in-catalog-functions?view=sql-server-ver15)
+* required OA
+  |Function	| Required arguments |
+  |---------|--------------------|
+  |SQLColumnPrivileges|	TableName|
+  |SQLForeignKeys|	PKTableName, FKTableName|
+  |SQLPrimaryKeys|	TableName|
+  |SQLSpecialColumns	TableName|
+  |SQLStatistics	TableName|

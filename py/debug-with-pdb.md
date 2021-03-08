@@ -20,9 +20,9 @@ python -m pdb your_script.py
 |------------------|--------------------------------|
 |c(ont(inue))      |continue                        |
 |w(here)           |print stack trace (reversed)|
-|b(reak) [fln\|func[,condition]|set break point, fln=file:line|
+|b(reak) [fln\|func[,condition]]|set break point, fln=file:line, ``break`` without args lists all breakpoints|
 |tbreak ...        |temporary break|
-|cl(ear) [fln\|bp#]...|clear breakpoint|
+|cl(ear) [fln\|bp#]...|clear breakpoint, all without args|
 |s(tep)            |step in|
 |n(ext)            |next|
 |unt(il)           |until line or out of current frame|
@@ -36,6 +36,12 @@ python -m pdb your_script.py
 
 * file:line#
 * function, e.g. pkg.mod.foo
+* list all breakpoints if no args
+* to break at a module, import that module first
+  ```
+  (Pdb) import mymodule
+  (Pdb) b mymodule.foo
+  ```
 
 ### Common Workflow
 1. invoke pdb (use ```-m pdb```)
@@ -62,7 +68,7 @@ python -m pdb your_script.py
 |w(here)           |print stack trace (reversed)|
 |d(own)            |move current frame 1 level down|
 |u(p)              |move current frame up|
-|b(reak) [fln\|func[,condition]|set break point, fln=file:line|
+|b(reak) [fln\|func[,condition]]|set break point, fln=file:line|
 |tbreak ...        |temporary break|
 |cl(ear) [fln\|bp#]...|clear breakpoint|
 |disable bp# ...   | disable bp|

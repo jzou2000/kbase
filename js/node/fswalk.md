@@ -3,6 +3,12 @@ title: fswalk
 description: walk fs directory with optional filter
 ---
 
+**Note** the 2nd version (async generator) is prefered: more concise, flexible, and easier to understand.
+
+
+## Old school version
+
+Plain style of ancient language feature, although promise is used.
 
 ```js
 //
@@ -77,3 +83,61 @@ tk.fswalk(root, /suite.*\.xml$/i)
 })
 
 ```
+
+## Asynchronous Generator
+
+```js
+const fs = require('fs')
+const path = require('path')
+
+// an asynchronous generator that recursively walk a path
+// pretty concise and intuitive, eh?
+
+async function* fswalk(fpath) {
+  var dir = await fs.promises.opendir(fpath)
+  for await (let i of dir) {
+    if  (i.isDirectory()) {
+        yield* await fswalk(path.join(fpath, i.name))
+    } else {
+        yield path.join(fpath, i.name)
+    }
+  }
+}
+
+
+// ------------------------------------------
+// usage examples
+
+// minimal usage
+(async function (pathname) {
+    for await (let f of fswalk(pathname)) {
+        console.log(f)
+    }
+})('.')
+
+// add more features:
+//    * break earlier
+//    * add filters
+//    * action at end of walk
+(async function (pathname) {
+    for await (let f of fswalk(pathname)) {
+
+        // a condition that break earlier: when R folder is encountered
+        if (f.search(/[/\\]R[/\\]/) >= 0)
+            break
+
+        // filter: list only xml files
+        if (f.match(/\.xml$/))
+            console.log(f)
+    }
+})('.')
+.then(() => {
+  console.log('==== fswalk done')
+})
+
+```
+
+Note:
+
+* generator is introduced in es6
+* async generator is introduced in es7
