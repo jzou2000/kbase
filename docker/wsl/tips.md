@@ -40,3 +40,11 @@ adding following lines in ``$HOME/.bash_profile``
 export WINHOST=$(grep nameserver /etc/resolv.conf | sed 's/nameserver //')
 export DISPLAY=$WINHOST:0
 ```
+
+## Access host network driver
+
+Suppose we have ``/mnt/m`` created and we want to mount driver ``M:`` to ``/mnt/m``
+
+```bash
+mount -t drvfs M: /mnt/m
+```
