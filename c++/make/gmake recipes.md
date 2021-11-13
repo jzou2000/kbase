@@ -152,3 +152,24 @@ You bet the string doesn't contain ____/
 ```make
 $(findstring ____/,____$(1))
 ```
+
+
+## Makefile that is invoked from the command-line and that directly import this file
+
+Whenever gmake parses a makefile, it pushes the file into the array of **``$(MAKEFILE_LIST)``**.
+When you invoke a command
+```sh
+gmake -f my-make-file
+```
+``my-make-file`` is the first element in the array **``$(MAKEFILE_LIST)``**, and every **``include``** command
+push a new file into the list.
+
+* ``$(firstword $(MAKEFILE_LIST))`` is the toplevel makefile, i.e. ``my-make-file``
+* ``$(lastword $(MAKEFILE_LIST))`` is the file that directly includes the current file.
+
+## absolute path of the makefile
+
+```makefile
+$(dir $(abspath $(firstword $(MAKEFILE_LIST))))
+```
+

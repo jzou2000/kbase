@@ -1,5 +1,6 @@
 ---
 title: C++ Name Demangling
+nav: name demangling
 date: 2019-06-21
 tags: [c++, demangling]
 ---

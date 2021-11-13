@@ -4,19 +4,33 @@ nav: build unixodbc
 description: build unixodbc from source
 ---
 
-# Get Source
+## Get Source
+
+The source of the latest unixODBC can be found on its [official website](http://www.unixodbc.org).
+At the writing moment, the latest version is 2.3.9.
 
 * get package from official site (you need the version number)
-```sh
-wget http://www.unixodbc.org/unixODBC-2.3.6.tar.gz
-```
+  ```sh
+  wget http://www.unixodbc.org/unixODBC-2.3.6.tar.gz
+  ```
 * get from a git clone (tags start from 2.3.2)
-```sh
-git clone https://github.com/lurcher/unixODBC.git
-```
+  ```sh
+  git clone https://github.com/lurcher/unixODBC.git
+  ```
+* earlier version, e.g. v2.3.1 can be found at [linuxfromscratch](http://www.linuxfromscratch.org/blfs/view/7.4/general/unixodbc.html)
 
 
-# Build Script mkuo.sh
+## Build Script mkuo.sh
+
+UnixODBC supports shadow-building, which means you can configure/build it from a folder other than its source.
+Here are **standard** steps:
+* configure. Use ``--srcdir=path/to/source`` to specify the source unless build from source (not recommended)
+* make
+* make install
+
+Use following shell script to make life even easier:
+* build for 32/64 bit
+* debug/release target
 
 ```bash
 
@@ -35,7 +49,7 @@ OPTIND=1
 ECHO=
 S=..
 E=
-CFG_OPT=--disable-readline
+CFG_OPT=--disable-readline # many OLD systems don't have readline library
 
 
 function build_bits()

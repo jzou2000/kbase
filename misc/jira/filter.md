@@ -1,7 +1,7 @@
 ---
-title: Jira Tips
+title: Jira Filter
 date: 2019-05-28
-tags: [jira, tips]
+tags: [jira, filter]
 ---
 
 ## jira filter for plan
@@ -95,3 +95,5 @@ Common fields are: [full field ref](https://confluence.atlassian.com/jirasoftwar
 |worklogComment|TEXT|||
 |worklogDate|DATE|worklogDate > "2011/01/1" and worklogDate < "-1d"||
 |workRatio|NUMBER|workRatio>75|more than 75%|
+
+

@@ -1,6 +1,6 @@
 ---
-title: ODBC Common Constants
-nav: common constants
+title: ODBC Return Code and Common Constants
+nav: sqlstate & constants
 tags: odbc, constants
 ---
 
@@ -19,6 +19,7 @@ tags: odbc, constants
 Note:
 
 * define SQL_SUCCEEDED(rc)           (((rc) & (~1)) == 0)
+* ODBC [SQLSTATE](https://www.easysoft.com/developer/interfaces/odbc/sqlstate_status_return_codes.html)
 
 ## Special Length
 |Name|Value|Description|

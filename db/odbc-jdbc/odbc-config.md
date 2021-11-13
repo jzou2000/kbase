@@ -10,7 +10,34 @@ description: configurate ODBC on different platforms and DM (driver manager)
 In spite of using the application ``ODBC Administrator`` to config ODBC drivers and DSN,
 you can config ODBC directly in registry.
 
-  ## Registry
+## Registry
+
+```txt
+  /HKEY_LOCAL_MACHINE/SOFTWARE/ODBC
+    ODBC.INI/
+      ODBC Data Sources/       - list of DSN/driver pairs
+      mydsn                    - DSN name
+        Driver=mydriver        - name of driver, match ODBCINST.INI
+        Description=text       - description of this DSN
+        other-key=value        - driver dependent, e.g. db path, uid, pwd
+    ODBCINST.INI/
+      ODBC Drivers             - list of installed drivers
+        mydriver=installed     - every driver has a record name=installed
+      mydriver/                - driver info: location and setup
+        Driver=path/to/dll     - pathname to driver dll
+        Setup=path/to/dll      - pathname to driver setup dll (may the same with Driver)
+        Description=text       - description of the driver
+
+  for simba drivers, also define
+  \HKEY_LOCAL_MACHINE\SOFTWARE\Simba
+    mydriver/Driver/
+      ErrorMessagesPath=path/to/ErrorMessages
+    
+```
+
+Note:
+* HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432NODE\ODBC for 32bit driver on 64bit system
+
 
 
 # Posix
