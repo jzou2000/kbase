@@ -1,7 +1,7 @@
 ---
 title: Using DBX to Debug
 date: 2019-10-11
-nav: Dbx
+nav: dbx
 tags: [debug, aix, dbx]
 ---
 

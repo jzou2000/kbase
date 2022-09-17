@@ -1,5 +1,6 @@
 ---
 title: Debugger
+nav: debugger
 date: 2019-05-27
 tags: [debugger, dbx, gdb, lldb]
 ---

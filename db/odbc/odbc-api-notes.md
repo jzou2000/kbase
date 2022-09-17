@@ -32,3 +32,4 @@ Unit of length parameters (both input and output) of ODBC API
   otherwise truncation happens.
 * Other APIs return character
   * SQLDescribeParam, ParameterSizePtr is in char. (there's no W-version though)
+* SQLGetData/SQLPutData always use length in bytes

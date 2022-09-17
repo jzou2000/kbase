@@ -1,7 +1,7 @@
 ---
 title: Java - Load A Class and/or Overload A Class On the Fly
 date: 2019-06-18
-nav: Load A Class Dynamically
+nav: dynamicly load class
 tags: [java, load, overload, on-the-fly]
 ---
 

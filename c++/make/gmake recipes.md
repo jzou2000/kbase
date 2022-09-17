@@ -173,3 +173,34 @@ push a new file into the list.
 $(dir $(abspath $(firstword $(MAKEFILE_LIST))))
 ```
 
+## convert comma(,) in a string into space( )
+
+By converting commas into spaces, we can apply **``foreach``** command to iterate each element
+```makefile
+#
+# convert comma (,) in a string into space ( )
+#
+# pass input string in variable str
+#
+# ex:
+# make -f comma.mk str=' ut, core, name,file,,world '
+str ?= ut, core, name,file,,world # default value
+
+.comma :=    ,
+s = $(strip $(subst $(.comma), ,$(str)))
+$(info str=[$(str)])
+$(info s=[$(s)])
+$(foreach _,$s,$(info i=[$_]))
+
+all:; @:
+```
+
+The result is
+```sh
+$ make -f comma.mk str=' ut, core, name,file,, '
+str=[ut, core, name,file,, ]
+s=[ut core name file]
+i=[ut]
+i=[core]
+i=[name]
+i=[file]```

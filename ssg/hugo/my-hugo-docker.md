@@ -19,26 +19,33 @@ By default the script runhugo
 Example
 
 ```bash
-runhugo
+$ hugo.sh -h
+hugo.sh [options] [project1 [project2 ...]]
+
+launch hugo in a container, should run from WSL/Linux
+
+    -h           help
+    -y           dry run
+    -i           interactive shell
+    -w path      work folder (/home/jasonz/myhub)
+    -c file      configuration yaml file
+    -v map-list  path mapping (e.g. lpath:dpath [-v lp2:dp2])
+    -t path      publish target folder (/mnt/c/myhub/site)
+    -b path      base url
+    -g           publish for github.io
+    -n           clean destination folder
+    -o           run once, don't monitor
+    -N           don't name container (hugo)
+    -I name      image (myhugo)
+    -r           run as root in container, default is current user
+    -f           force to use local theme at (/home/jasonz/myhub/myhugo/van)
+    -q           quit after clean
+
+    default projects are: kbase diy life simba books bookmarks
+
 ```
 
-Note:
 
-* the default topleve list is ``kbase simba books bookmarks``
-
-
-To run interactively
-
-```bash
-runhugo -i  kbase simba books bookmarks
-hugo -w --cleanDestinationDir
-
-# alternately you can specified config and themem
-# runhugo -i -c config-my.yaml -t ~/tmp/ssg kbase simba
-# hugo -w -t mytheme --cleanDestinationDir
-
-
-```
 
 ## Theme
 

@@ -1,5 +1,6 @@
 ---
 title: Shared Object Miscelleous
+nav: shared object
 date: 2019-10-07
 tags: [share, object, debug, dll]
 ---

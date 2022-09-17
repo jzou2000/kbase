@@ -32,7 +32,8 @@ Most common conditions
   ```
 * isset
   ```xml
-  <isset property='name'/>
+  <isset property='name-of-property'/>
+  <isset property='env.my_var'>                  <!-- error: property='${env.my_var'} -->
   ```
 * and-or-not
   ```xml
@@ -98,3 +99,63 @@ Most common conditions
       <os family='mac'/>
   </condition>
   ```
+
+
+Advanced condition
+
+```xml
+    <condition property='ar.dir' value='${env.AR_DIR}'>
+        <isset property='env.AR_DIR'/>
+    </condition>
+
+    <condition property='ar.dir' value='${env.NFS_DIR}'>
+        <and>
+            <not>
+                <isset property='ar.dir'/>
+            </not>
+            <isset property='env.NFS_DIR'/>
+        </and>
+    </condition>
+```
+Because properties are **immutable**, above snippet can be simplified as
+```xml
+    <condition property='ar.dir' value='${env.AR_DIR}'>
+        <isset property='env.AR_DIR'/>
+    </condition>
+
+    <condition property='ar.dir' value='${env.NFS_DIR}'>
+        <isset property='env.NFS_DIR'/>
+    </condition>
+```
+
+
+```sh
+jasonz@VANLWIN0056:~/codex/java/ant$ regex='\.dir' AR_DIR=/mnt/builds/SEN NFS_DIR=/nfs ant -f ex-condition.xml dump-env
+Buildfile: /home/jasonz/codex/java/ant/ex-condition.xml
+
+dump-env:
+[echoproperties] #Ant properties
+[echoproperties] #Thu Mar 24 10:14:15 PDT 2022
+[echoproperties] dest.dir=/home/jasonz/codex/java/ant/build
+[echoproperties] ant.library.dir=/usr/share/ant/lib
+[echoproperties] ar.dir=/mnt/builds/SEN
+[echoproperties] user.dir=/home/jasonz/codex/java/ant
+[echoproperties] src.dir=/home/jasonz/codex/java/ant/src
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+jasonz@VANLWIN0056:~/codex/java/ant$ regex='\.dir' aAR_DIR=/mnt/builds/SEN NFS_DIR=/nfs ant -f ex-condition.xml dump-env
+Buildfile: /home/jasonz/codex/java/ant/ex-condition.xml
+
+dump-env:
+[echoproperties] #Ant properties
+[echoproperties] #Thu Mar 24 10:14:21 PDT 2022
+[echoproperties] dest.dir=/home/jasonz/codex/java/ant/build
+[echoproperties] ant.library.dir=/usr/share/ant/lib
+[echoproperties] ar.dir=/nfs
+[echoproperties] user.dir=/home/jasonz/codex/java/ant
+[echoproperties] src.dir=/home/jasonz/codex/java/ant/src
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+```

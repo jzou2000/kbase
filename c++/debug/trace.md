@@ -1,5 +1,6 @@
 ---
 title: Trace
+nav: trace
 date: 2020-03-06
 tags: [dtrace, ctrace]
 ---

@@ -1,9 +1,8 @@
 ---
-title: VisualStudio Code and Javascript
-weight: -10
+title: Playing Javascript with VisualStudio Code
 date: 2019-10-08
 description: Setting and debugging for Javascript with Visual Studio Code.
-nav: VSC - settings and more
+nav: play with vsc
 tags: [vsc, settings, js, javascript]
 ---
 

@@ -1,9 +1,8 @@
 ---
 title: Debug Python Script With Pdb
 date: 2019-08-15
-nav: Debug With Pdb
+nav: pdb
 tags: [debug, python, pdb]
-weight: 1
 ---
 
 Just like gdb is still used for C/C++ programmer, pdb is still useful although we have many IDE tools like pycharm or vs-code.

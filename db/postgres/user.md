@@ -21,3 +21,22 @@ title: postgresql user
   createuser name
   ```
 * TBC
+
+## create role
+
+```bash
+psql -U postgres
+postgres=#
+create database mydb;
+\connect mydb
+create table boys (id integer, name varchar(32));
+create role ddp;
+alter role ddp with password 'ddp-pwd';
+grant all on database mydb to ddp;
+grant all on table boys to ddp;
+```
+
+```bash
+psql -U ddp -h localhost -d mydb
+mydb=> select * from boys;
+```

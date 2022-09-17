@@ -141,6 +141,34 @@ struct tagTIMESTAMP_STRUCT {
 } TIMESTAMP_STRUCT;
 // size = 16
 
+typedef struct tagSQL_YEAR_MONTH
+{
+    SQLUINTEGER	year;
+    SQLUINTEGER	month;
+} SQL_YEAR_MONTH_STRUCT;
+// size = 8
+
+typedef struct tagSQL_DAY_SECOND
+{
+    SQLUINTEGER day;
+    SQLUINTEGER	hour;
+    SQLUINTEGER	minute;
+    SQLUINTEGER	second;
+    SQLUINTEGER	fraction;
+} SQL_DAY_SECOND_STRUCT;
+// size = 20
+
+typedef struct tagSQL_INTERVAL_STRUCT
+{
+    SQLINTERVAL	interval_type;
+    SQLSMALLINT	interval_sign;
+    union {
+        SQL_YEAR_MONTH_STRUCT year_month;
+        SQL_DAY_SECOND_STRUCT day_second;
+    } intval;
+} SQL_INTERVAL_STRUCT;
+// size = 28
+
 struct tagSQL_NUMERIC_STRUCT {  
    SQLCHAR precision;  
    SQLSCHAR scale;  

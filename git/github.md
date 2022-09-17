@@ -38,6 +38,7 @@ Password: your_token
   ```
 * perform any action that requires credential, git will cache it in ``$HOME/.git-credentials``.
   * in the format ``https://{username}:{password}@url``
-* the file is still in plain text, assuming the file is safe.
+* the file is still in plain text, assuming the file is safe. **Remove it** when the file is not safe, for example, the machine is not your **personal** machine anymore.
+
 
 

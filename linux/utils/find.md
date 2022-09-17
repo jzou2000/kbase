@@ -3,6 +3,7 @@ title: find
 nav: find
 ---
 
+### Common Options
 |type  |arg            |example        |description                    |also|
 |:-----|:--------------|:--------------|:------------------------------|:----|
 |test  |+n             |+5             |greater than n                 |-n (less), n (equal)|
@@ -24,8 +25,26 @@ nav: find
 |        |!            |! -amin 2      |not                            |-not, -a, -and, -o, -or|
 |misc|-maxdepth levels |-maxdepth 3|max depths in recursive, 0 for no-subfolders||
 
-
-Recipes
+Note
+* ``-regex`` use ``grep`` pattern by default. To use other pattern, set by ``-regextype``,
+  available values are
+  * ed
+  * emacs
+  * gnu-awk
+  * grep
+  * posix-awk
+  * awk
+  * posix-basic
+  * posix-egrep
+  * egrep
+  * posix-extended
+  * posix-minimal-basic
+  * sed
+  or use an invalid value (e.g. ``help`` to get a list)
+  ```
+  find * -regextype posix-extended
+   
+### Recipes
 
 * simple
   ```bash
