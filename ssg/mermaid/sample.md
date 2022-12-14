@@ -4,6 +4,20 @@ title: sample
 
 ## Simple
 
+```html
+put diagram in div@mermaid
+
+<div class="mermaid">
+  mermaid diagrams
+</div>
+
+include mermaid.js at bottom
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+
+```
+
+See [mermaid document](https://mermaid-js.github.io/mermaid/#/)
+
 
 <div class="mermaid">
 graph LR;
