@@ -222,6 +222,66 @@ g++ -o b32 -m32 bit.cpp
 
 ## centos7
 
+```sh
+$ ls -F
+ockerfile  get-rpm.sh*  rpms/  run.sh*
+```
+
+get-rpm.sh
+```sh
+#! /bin/bash
+
+# Download all rpm required to build agent:7
+#
+# run in a container from centos:7
+# docker run -it --rm -v $(pwd)/rpms:/x -v $(pwd):/m -e UID=$(id -u) -e GID=$(id -g) centos:7 /m/get-rpm.sh
+#
+
+
+
+yum -y update \
+  && yum -y downgrade libselinux \
+  && yum -y install yum-utils
+
+cc="gcc gcc-c++ glibc-devel libstdc++-devel"
+devel="zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel gdbm-devel libpcap-devel xz-devel expat-devel"
+util="m4 make which perl perl-Data-Dump PyYAML"
+
+cd /x
+yumdownloader --resolve $cc $devel $util
+
+# change owner/group if wished
+chown $UID *.rpm
+chgrp $GID *.rpm
+```
+
+The Dockerfile
+```dockerfile
+FROM centos:7
+
+WORKDIR /home
+
+# cc="gcc gcc-c++ glibc-devel libstdc++-devel"
+# devel="zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel gdbm-devel libpcap-devel xz-devel expat-devel"
+# util="m4 make which perl perl-Data-Dump PyYAML"
+
+ADD rpms/*.rpm /home/
+RUN yum -y update \
+  && yum -y downgrade libselinux \
+  && yum -y localinstall *.rpm \
+  && rm -rf *
+
+ENTRYPOINT [ "/bin/bash" ]
+
+```
+
+run.sh
+```sh
+docker build -t agent:7 .
+```
+
+
+
 gcc4.8
 ```
 cc="gcc gcc-c++ glibc-devel libstdc++-devel"
@@ -286,8 +346,40 @@ yumdownloader --resolve $devel
 
 util (except perl)
 ```
-util="m4 make which"
-(1/3): make-3.82-24.el7.x86_64.rpm                     | 421 kB   00:00
-(2/3): which-2.20-7.el7.x86_64.rpm                     |  41 kB   00:00
-(3/3): m4-1.4.16-10.el7.x86_64.rpm                     | 256 kB   00:00
+util="m4 make which perl perl-Data-Dump PyYAML"
+yumdownloader --resolve $util
+
+(1/33): libyaml-0.1.4-11.el7_0.x86_64.rpm                |  55 kB  00:00:00
+(2/33): PyYAML-3.10-11.el7.x86_64.rpm                    | 153 kB  00:00:01
+(3/33): m4-1.4.16-10.el7.x86_64.rpm                      | 256 kB  00:00:01
+(4/33): perl-Carp-1.26-244.el7.noarch.rpm                |  19 kB  00:00:00
+(5/33): perl-Exporter-5.68-3.el7.noarch.rpm              |  28 kB  00:00:00
+(6/33): perl-File-Path-2.09-2.el7.noarch.rpm             |  26 kB  00:00:00
+(7/33): make-3.82-24.el7.x86_64.rpm                      | 421 kB  00:00:02
+(8/33): perl-File-Temp-0.23.01-3.el7.noarch.rpm          |  56 kB  00:00:00
+(9/33): perl-Getopt-Long-2.40-3.el7.noarch.rpm           |  56 kB  00:00:00
+(10/33): perl-Filter-1.49-3.el7.x86_64.rpm               |  76 kB  00:00:00
+(11/33): perl-HTTP-Tiny-0.033-3.el7.noarch.rpm           |  38 kB  00:00:00
+(12/33): perl-PathTools-3.40-5.el7.x86_64.rpm            |  82 kB  00:00:00
+(13/33): groff-base-1.22.2-8.el7.x86_64.rpm              | 942 kB  00:00:03
+(14/33): perl-Pod-Perldoc-3.20-4.el7.noarch.rpm          |  87 kB  00:00:00
+(15/33): perl-Pod-Usage-1.63-3.el7.noarch.rpm            |  27 kB  00:00:00
+(16/33): perl-Scalar-List-Utils-1.27-248.el7.x86_64.rpm  |  36 kB  00:00:00
+(17/33): perl-Pod-Simple-3.28-4.el7.noarch.rpm           | 216 kB  00:00:00
+(18/33): perl-Pod-Escapes-1.04-299.el7_9.noarch.rpm      |  52 kB  00:00:01
+(19/33): perl-Socket-2.010-5.el7.x86_64.rpm              |  49 kB  00:00:00
+(20/33): perl-Text-ParseWords-3.29-4.el7.noarch.rpm      |  14 kB  00:00:00
+(21/33): perl-Storable-2.45-3.el7.x86_64.rpm             |  77 kB  00:00:00
+(22/33): perl-Time-HiRes-1.9725-3.el7.x86_64.rpm         |  45 kB  00:00:00
+(23/33): perl-constant-1.27-2.el7.noarch.rpm             |  19 kB  00:00:00
+(24/33): perl-Time-Local-1.2300-2.el7.noarch.rpm         |  24 kB  00:00:00
+(25/33): perl-macros-5.16.3-299.el7_9.x86_64.rpm         |  44 kB  00:00:00
+(26/33): perl-parent-0.225-244.el7.noarch.rpm            |  12 kB  00:00:00
+(27/33): perl-threads-1.87-4.el7.x86_64.rpm              |  49 kB  00:00:00
+(28/33): perl-podlators-2.5.1-3.el7.noarch.rpm           | 112 kB  00:00:00
+(29/33): perl-Encode-2.51-7.el7.x86_64.rpm               | 1.5 MB  00:00:04
+(30/33): which-2.20-7.el7.x86_64.rpm                     |  41 kB  00:00:00
+(31/33): perl-threads-shared-1.43-6.el7.x86_64.rpm       |  39 kB  00:00:00
+(32/33): perl-libs-5.16.3-299.el7_9.x86_64.rpm           | 690 kB  00:00:01
+(33/33): perl-5.16.3-299.el7_9.x86_64.rpm                | 8.0 MB  00:00:09
 ```

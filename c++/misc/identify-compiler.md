@@ -12,7 +12,7 @@ Reference [SourceForge.net](https://sourceforge.net/p/predef/wiki/Compilers/)
 |clang       |``__clang__``   |                   |                          |
 |            |``__clang_major__``|                |version major             |
 |            |``__clang_minor__``|                |version minor             |
-|VisualC++   |``_MSC_VER``    |1910               |VVRR 15.0(2017)                     |
+|VisualC++   |``_MSC_VER``    |1910               |VVRR 15.0(2017)           |
 |            |``_MSC_FULL_VER``    |191025017     |VVRRPPPP                  |
 |SolarisStudio|``__SUNPRO_C`` |0x5120             |0xVRP version,revision,patch (upto 5.9) 0xVRRP later, e.g. ss12.3/compiler5.12|
 |            |``__SUNPRO_CC`` |                   |                          |
@@ -22,5 +22,5 @@ Reference [SourceForge.net](https://sourceforge.net/p/predef/wiki/Compilers/)
 |            |``__ibmxl_release__``|1             |release                   |
 |            |``__ibmxl_modification__``|6        |modification              |
 |            |``__ibmxl_ptf_fix_level__``|1       |fix                       |
-|            |``__xlC__``     |1                  |legacy compiler, 0xVVRR   |
+|            |``__xlC__``     |1                  |legacy compiler, 0xVVRR, **don't use**|
 |HP aCC      |``__HP_aCC``    |12100              |VVRRPP (version,revision,patch)|

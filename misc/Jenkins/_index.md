@@ -1,4 +1,0 @@
----
-title: Jenkins
-nav: jenkins
----
